@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Style -->
+  <style type="text/css">
+
+  </style>
+  <title>JavaScript</title>
+</head>
+
+<body>
+	<h1>Introduction Au Cours de JavaScript</h1>
+	<p>Declaration de Variables</p>
+
+	<!-- JavaScript -->
+	<script type="text/javascript">
+		// Déclarer des variables
+		// Le ; n'est pas OBLIGATOIRE
+		// Les types STRING, NUMBER, OBJECT, ARRAY...
+		// ARRAY => TABLEAUX / LISTES ( Structure de donnéés )
+		// OBJECTS => TABLEAUX / LISTES ( Structure de donnéés )
+		// Les types STRING ( "" / '' )
+		// Les types NUMBER ( 10, 88.88 ...)
+		// Les OBJECTS => ( En Python des DICTIONNAIRES )
+		// La combinaison de ( KEY, VALEUR )
+
+		// PREMIERE APPROCHE ( DEPRECIER / OBSOLETE )
+		var var_name = "DIT";
+		console.log(var_name);
+		console.log("\n");
+
+		// Reutiliser la variable var_name
+		// Possibilité de le faire avec VAR
+		var_name = "ISI";
+		console.log(var_name);
+		console.log("\n");
+
+		// DEUXIEME APPROCHE
+		let let_name = "DIT";
+		console.log(let_name);
+		console.log("\n");
+
+		// Reutiliser la variable let_name
+		// Possibilité de le faire avec LET
+		let_name = "ISI";
+		console.log(let_name);
+		console.log("\n");
+
+		// TROISIEME APPROCHE
+		const const_name = "DIT";
+		console.log(const_name);
+		console.log("\n");
+
+		// Reutiliser la variable const_name
+		// Pas possible avec CONST
+		// const_name = "ISI";
+		// console.log(const_name);
+		// console.log("\n");
+
+		// Afficher en console
+		// console.log(const_name);
+		console.table([var_name, let_name, const_name]);
+
+		// Emettre un WARNING
+		console.warn('Attention');
+
+		// Emettre une erreur
+		console.error('Erreur');
+
+		// Clear la console
+		console.clear()
+
+	</script>
+</body>
+
+</html>

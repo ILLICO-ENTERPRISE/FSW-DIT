@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Style -->
+  <style type="text/css">
+  </style>
+  <title>JavaScript</title>
+</head>
+
+<body>
+	<h1>Introduction Au Cours de JavaScript</h1>
+	<p>Array / Object </p>
+
+	<!-- JavaScript -->
+	<script type="text/javascript">
+		// Les Tableaux
+		// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+    // Inserer des elements dans un tableau
+		let numbers = [1, 2, 3, 4, 5];
+
+    let fruits = Array(
+      'Orange',
+      'Tomato',
+      'Pepperoni',
+      'Ananas'
+    );
+
+    let students = {
+    	'name': 'Souleymane',
+    	'school': 'DIT',
+    	'salary': 1870000.500,
+    	'age': 28
+    }
+
+    // [1, 2, 3, 4, 5]
+    console.log(numbers);
+    // 1 2 3 4 5
+    console.log(...numbers);
+    console.log('\n');
+
+    // ['Orange', 'Tomato', 'Pepperoni', 'Ananas']
+    console.log(fruits);
+    // Orange Tomato Pepperoni Ananas
+    console.log(...fruits);
+    console.log('\n');
+
+    // Afficher les éléments d'un tableau
+    // Utiliser les indexes du tableau
+    // Afficher le premier element
+    // 1
+    console.log(numbers[0])
+    // 2
+    console.log(numbers[1])
+    // 3
+    console.log(numbers[2])
+    console.log('\n')
+
+    // Afficher les éléments d'un tableau
+    // Utiliser les indexes du tableau
+    // Afficher le premier element
+    // Orange
+    console.log(fruits[0])
+    // Tomato
+    console.log(fruits[1])
+    // Pepperoni
+    console.log(fruits[2])
+    console.log('\n')
+
+    // Afficher la longueur du tableau
+    // Utilser l'attribut length
+    // 4
+    console.log(fruits.length)
+    // 5
+    console.log(numbers.length)
+    console.log('\n')
+
+    // Ajouter dans un tableau
+    // Ajouter un nouvel element
+    fruits.push('Banana')
+    numbers.push(100);
+    // [1, 2, 3, 4, 5, 100]
+    console.log(numbers)
+    // ['Orange', 'Tomato', 'Pepperoni', 'Ananas', 'Banana']
+    console.log(fruits)
+    console.log('\n')
+
+    // Afficher la longueur du tableau
+    // Utilser l'attribut length
+    // Doit passer de 4 => 5
+    console.log(fruits.length)
+    // Doit passer de 5 => 6
+    console.log(numbers.length)
+    console.log('\n')
+
+    // Verifier si un tableau est un tableau
+    // Retourne un boolean entre true / false
+    // true
+    console.log(Array.isArray(numbers))
+    // true
+    console.log(Array.isArray(fruits))
+    console.log('\n')
+
+    // Caster un tableau
+    // Utilisation de la fonction .from()
+    // [1, 2, 3, 4, 5, 100]
+    console.log(Array.from(numbers))
+    // ['Orange', 'Tomato', 'Pepperoni', 'Ananas', 'Banana']
+    console.log(Array.from(fruits))
+    console.log('\n')
+
+    // Afficher un objet
+    // {name: 'Souleymane', school: 'DIT', salary: 1870000.5, age: 28}
+    console.log(students)
+    console.log('\n')
+
+    // Afficher un objet
+    // Afficher que les clés de l'objet
+    // ['name', 'school', 'salary', 'age']
+    console.log(Object.keys(students))
+    console.log('\n')
+
+    // Afficher un objet
+    // Afficher que les valeurs de l'objet
+    // ['Souleymane', 'DIT', 1870000.5, 28]
+    console.log(Object.values(students))
+    console.log('\n')
+
+    // Afficher un objet
+    // Afficher un element via sa clés
+    // 28
+    console.log(students['age'])
+    console.log(students.age)
+    // Souleymane
+    console.log(students['name'])
+    console.log(students.name)
+    // 1870000.5
+    console.log(students['salary'])
+    console.log(students.salary)
+    console.log('\n')
+
+    // Manipulation des tableaux
+    // Concatener deux tableaux
+    // ['Orange', 'Tomato', 'Pepperoni', 'Ananas', 'Banana', 1, 2, 3, 4, 5, 100]
+    let concat = fruits.concat(numbers)
+    console.log(concat)
+    console.log('\n')
+
+    // Manipulation des objects
+    // Caster un Array => object
+    // Comme des tableaux associatifs
+    // ['0', '1', '2', '3', '4']
+    console.log(Object.keys(fruits))
+    console.log('\n')
+
+    // Manipulation des objects
+    // Caster un Array => object
+    // Comme des tableaux associatifs
+    // ['Orange', 'Tomato', 'Pepperoni', 'Ananas', 'Banana']
+    console.log(Object.values(fruits))
+    console.log('\n')
+
+    // Manipulation des objects
+    // Chercher un élément dans un tableau
+    // Prend un argument un callback
+    // callback => une fonction quon passe en parametre
+    // console.log(Array.from(fruits).find('Orange'))
+    // console.log('\n')
+
+    // Manipulation des objects
+    // Parsing en strings
+    // {"name":"Souleymane","school":"DIT","salary":1870000.5,"age":28}
+    console.log(JSON.stringify(students))
+    console.log(typeof JSON.stringify(students))
+    console.log('\n')
+
+    // Verification des types
+    // object => (ARRAY / OBJECT )
+    console.log(typeof fruits)
+    // object => (ARRAY / OBJECT )
+    console.log(typeof numbers)
+    // object => (ARRAY / OBJECT )
+    console.log(typeof students)
+    // number => (DECIMAL / INTEGER )
+    console.log(typeof 2)
+    // boolean => (true / false )
+    console.log(typeof true)
+    console.log(typeof false)
+    console.log('\n')
+
+    // objects spécifiques
+    // None ( type )
+    console.log(undefined)
+    console.log(null)
+    console.log('\n')
+    
+  </script>
+</body>
+
+</html>

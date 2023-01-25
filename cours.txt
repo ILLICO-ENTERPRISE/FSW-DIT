@@ -1,0 +1,86 @@
+- Architecture Repartie
+- Architecture Orienté Micro Service
+- Architecture des applications Monolithiques
+- Les termes les plus courants ( WEB )
+	- BACKEND ( La logique pour implémenter un service )
+		- Utiliser des Langages de programmation
+		- Comme Langage: PHP, JAVA, JAVASCRIPT, PYTHON ...
+	- FRONTEND ( Tout ce qui permet de rendre la logique sous forme visuelle )
+		- Utiliser des Langages de programmation
+		- Comme Langage: JAVASCRIPT, HTML, CSS
+		- Le Langage qui se colle au FRONTEND c'est le JAVASCRIPT
+			- Des outils du nom de ANGULAR JS, REACT JS, VUE JS, VITE JS ...
+			- On ne peut pas faire du FRONTEND sans faire du HTML/CSS/JS
+- Dans le jargon WEB quand on implémente une application que sur du HTML/CSS on parle d'application STATIQUE
+- Donc c'est pour donner un coté DYNAMIQUE a la partie STATIQUE qu'on utilise du JAVASCRIPT
+- Donc en sommes le JAVASCRIPT c'est pour dynamiser un site fait en HTML/CSS
+- Maintenant il y a une alternative au JAVASCRIPT qu'on appelle le JQUERY
+- Le JQUERY permet de faire du JAVASCRIPT mais aves des raccourcis déjà implémentés
+
+
+- Le JAVASCRIPT c'est un langage comme tous les autres
+- Il a une syntaxe
+	- De varibales
+	- De mot cles
+	- De Structure de Données
+	- Programmation Orienté Objet
+		- Fonctions / Methodes
+		- Classes
+		- Exceptions
+		- Interfaces
+		- Héritage
+		- Surcharge de méthodes ...
+
+- Les frameworks
+	- De manière Traditionnelle
+	- Pour la conception d'un site WEB
+		- Un Serveur WEB
+		- Une base de Données
+		- Un Serveur de Mail
+		- Un outils de STOCKAGE des Fichiers
+		- Les alternatives a cet environnement
+			- DOCKER
+				- Un environnement de Developpement ( VIRTUEL )
+				- Créer des SERVICES
+					- SERVICE ( BASE DE DONNEE )
+					- SERVICE ( FRAMEWORK ( WEB ))
+					- SERVICE ( STOCKAGE DES FICHIERS )
+				- Démarrage via des COMMANDES DOCKERS
+
+			- CLUSTER d'environnement ( KUBERNETES )
+	- Avantages:
+		- Tout en un ( SERVER WEB + Base de données + Autres services )
+	- Inconvenients:
+		- C'est l'installation de plusieiurs outils
+		- Consommation de RAM conséquente
+
+
+- EXEMPLE:
+	- Si On prend une page WEB
+	- La partie statique d'une page web ( HTML + CSS )
+		- Le HTML permet de construire le DOCUMENT
+			- Structure de la PAGE
+			- Des BALISES
+				- BALISES OUVRANTE ET FERMANTE
+					- Exemple:
+						- <p></p>
+						- <p>: BALISE OUVRANTE
+						- </p>: BALISE FERMANTE
+				- BALISES ORPHELINES
+					- Exemple:
+						- <br> / <hr> ( 1e Ecritures )
+						- <br /> / < hr /> ( 2e Ecritures )
+		- Le CSS permet d'apporter du STYLE a la PAGE
+			- utilisation des attributs
+			- utilisation des SELECTEURS
+				- ID / CLASS
+				- Exemple:
+					- <hr id='identifiant-hr'>
+					- <hr class='class-hr'>
+			- Des dimensions
+				- Largeur / hauteur
+					-
+				- ...
+			- Des COULEURS
+			- Des POSITIONS
+			- RENDU

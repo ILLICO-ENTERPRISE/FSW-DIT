@@ -1,0 +1,5 @@
+https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets
+https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css
+https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion
+https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify
+https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode

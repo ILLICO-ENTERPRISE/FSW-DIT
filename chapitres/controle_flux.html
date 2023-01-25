@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Style -->
+  <style type="text/css">
+  </style>
+  <title>JavaScript</title>
+</head>
+
+<body>
+	<h1>Introduction Au Cours de JavaScript</h1>
+	<p>Les conditions et les boucles</p>
+
+	<!-- JavaScript -->
+	<script type="text/javascript">
+    // Fira Code Font:
+    // https://github.com/tonsky/FiraCode
+    // Les fonctions natives alert() / confirm()
+    // alert() => POUR ALERTER ( affiche un POP UP)
+    // confirm() => POUR CONFIRMER ( afficher une demande de confirmation )
+		// Les conditions ( IF / ELSE )
+    // Faire un controle via une condition
+		let age = 18;
+
+    // L'égalité en Javascript
+    // == (VALEUR) et === (VALEUR+TYPE)
+    // Première ecriture
+    if (age == 18) {
+      console.log('Il a l\'age')
+      console.log('Tu peux sortir')
+      console.log('Tu peux avoir une copine')
+      console.log('\n')
+    }
+
+    // L'égalité en Javascript
+    // == (VALEUR) et === (VALEUR+TYPE)
+    // Deuxieme ecriture
+    // NB: uniligne ( 1e seule instruction )
+    if (age == 18)
+      console.log('Il a l\'age')
+
+    // L'égalité en Javascript
+    // == (VALEUR) et === (VALEUR+TYPE)
+    // Troisieme ecriture
+    // NB: uniligne ( 1e seule instruction )
+    if (age == 18) console.log('Il a l\'age');
+
+    // Verification
+    // Cas Favorable ou Non
+    // If => (SI) / Else => (SINON)
+    if (age >= 18) {
+      console.log('Tu es MAJEUR')
+    } else {
+      console.warn('Tu es MINEUR')
+    }
+
+    // Verification
+    // Cas Favorable ou Non
+    // If => (SI) / Else => (SINON)
+    age = 17;
+    if (age < 18) {
+      console.log('Tu es MINEUR')
+    } else {
+      console.warn('Tu es MAJEUR')
+    }
+
+    // Verification
+    // Cas Favorable ou Non
+    // Utilisation de alert()
+    // If => (SI) / Else => (SINON)
+    age = 17;
+    if (age < 18) {
+      alert('Tu es MINEUR')
+    } else {
+      alert('Tu es MAJEUR')
+    }
+    console.log('\n')
+
+    // Boucles
+    // Iteration sur les tableaux
+    let fruits = Array(
+      'Orange',
+      'Tomato',
+      'Pepperoni',
+      'Ananas'
+    );
+    // La manière traditionnelle
+    // Première approche (1)
+    for (let i =0; i < fruits.length; i++) {
+      console.log(`Index: ${i}`)
+      console.log(`Value: ${fruits[i]}`);
+    }
+
+    // La manière améliorée
+    // L'approche des callbacks
+    // Deuxieme approche (2)
+    console.log('\n')
+    fruits.forEach(function(value, index) {
+      console.log(`Index: ${index}`)
+      console.log(`Value: ${value}`)
+    })
+
+    // La manière améliorée
+    // L'approche des callbacks
+    // Deuxieme approche (3)
+    // Retourne un nouveau tableau
+    // ['Tomato', 'Pepperoni', 'Ananas']
+    console.log('\n')
+    let newTab = fruits.filter(function(item) {
+      // Insère une condition
+      return item !== 'Orange';
+    })
+    console.log(newTab)
+
+    // La manière améliorée
+    // L'approche des callbacks
+    // Deuxieme approche (4)
+    // Retourne un nouveau tableau
+    // ['ORANGE', 'TOMATO', 'PEPPERONI', 'ANANAS']
+    console.log('\n')
+    newTab = fruits.map(function(item) {
+      // Mettre en majuscule les elements
+      // Les elements du tableau
+      // Applique un comportement
+      // string
+      console.log(typeof item);
+      // Pu appliquer la fonction toUpperCase()
+      return item.toUpperCase();
+    })
+    console.log(newTab)
+
+  </script>
+</body>
+
+</html>
