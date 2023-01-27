@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Style -->
+  <style type="text/css">
+
+  </style>
+  <title>JavaScript</title>
+</head>
+
+<body>
+	<h1>Introduction Au Cours de JavaScript</h1>
+	<h2>Programmation Orienté Objet</h2>
+	<p>Introduction aux fonctions</p>
+
+	<!-- JavaScript -->
+	<script type="text/javascript">
+		// Un fonction est la factorisation  d'un code
+		// Regrouper un bloc d'instruction qui se répète
+		// Et il cadre avec l'OOP
+		// Une fonction a un nom et prends des paramètres
+		// PARAMETRES <=> ARGUMENTS
+		// ARGUMENTS de position ( OBJECT )
+		// OBJECT: {name: TYPE, age: TYPE}
+		// En TypeScript
+		// OBJECT = {name: String, age: Number}
+		// Validtaion des Types
+		// En Javascript
+		// OBJECT = {name: Any, age: Any}
+		// Une fonction ne s'excute que lorsqu'elle appelée
+		function displayName1() {
+			console.log("Welcome To Full Stack Formation")
+		}
+
+		// Expected Results
+		// Welcome To Full Stack Formation
+		displayName1()
+		console.log('\n')
+
+		// Passer des paramètres
+		// PARAMETRES D'entrée <=> SIGNATURE
+		function displayName(name) {
+			console.log(`${name}`)
+		}
+
+		// Une fonction une utilité
+		// Soit elle affiche ( POCEDURE )
+		// PROCEDURE => typeof return est VOID ( RIEN )
+		// Dans le cas ou elle retourne ( FUNCTION )
+		// FUNCTION => typeof return a un TYPE
+		function displayName(name) {
+			return name
+		}
+
+		// Expected Results
+		// FullStack Web
+		let result = displayName('FullStack Web')
+		console.log('\n')
+		console.log(result)
+
+		// Une fonction une utilité
+		// Peut prendre plusieur paramètres
+		function fullName(firstName, lastName) {
+			return `${firstName} ${lastName}`
+		}
+
+		// Expected Results
+		// DIT FSW
+		result = fullName('DIT', 'FSW')
+		console.log('\n')
+		console.log(result)
+
+		// Une fonction une utilité
+		// Peut prendre plusieur paramètres
+		// Ces paramètres peuvent être de tous les types
+		// type(PARAMETRE) <=> Object / Array
+		function listFruits(fruits) {
+			return fruits
+		}
+
+		const tab = ['Orange', 'Tomato', 'Peper']
+		result =listFruits(tab)
+		console.log(result)
+
+		// Une fonction une utilité
+		// Qui va mettre en majuscule
+		// Les éléments qu'il renferme
+		// C'est du CAMEL CASE / ( KEBAB CASE )
+		function tabUpperCase(fruits) {
+			return fruits.map(function(item) {
+				return item.toUpperCase();
+			})
+		}
+
+		// Récupérer tous les éléments
+		// FILTER / MAP font du DEEPCOPY
+		// Ils créent un nouveau sans altérer le principale
+		function filterTab(fruits) {
+			return fruits.filter(function(item) {
+				return item !== 'ORANGE'
+			})
+		}
+
+		/**
+		 * [factory description]
+		 * @param  {Object} fruits [description]
+		 * @return {Object}        [description]
+		 */
+		function factory(fruits) {
+			let datas = tabUpperCase(fruits)
+			datas = filterTab(datas)
+			return datas
+		}
+
+		result = factory(tab)
+		console.log(result)
+
+		// L'approche ESX
+		// X in (6, 7, 8)
+		// L'écriture flèchée
+		const func = (fruits) => {
+			return fruits
+		}
+
+		console.log(func(tab))
+
+		// L'approche ESX
+		// X in (6, 7, 8)
+		// L'écriture flèchée
+		// Plusieurs paramètres
+		//
+		// Python
+		// f = lambda x: x**2
+		// f = lambda x,y,z: [x**2,y**3,z**4]
+		// f(2,3,4) <=> [4,..,]
+		// Des Normes (ES2015)
+		// La porté (2) ( Ref sur le DOM)
+		// La Rapidité
+		const func2 = (fruits, name, age) => {
+			return fruits
+		}
+
+		result = func2(tab, "DIT", 28)
+		console.log(result)
+
+	</script>
+</body>
+
+</html>

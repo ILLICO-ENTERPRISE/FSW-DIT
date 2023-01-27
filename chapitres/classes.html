@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Style -->
+  <style type="text/css">
+
+  </style>
+  <title>JavaScript</title>
+</head>
+
+<body>
+	<h1>Introduction Au Cours de JavaScript</h1>
+	<h2>Programmation Orienté Objet</h2>
+	<p>Introduction aux Classes</p>
+
+	<!-- JavaScript -->
+	<script type="text/javascript">
+		// Une classe c'est un type
+		// https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function
+		// class Person
+		// Permet de modéliser de l'abstrait en concrèt
+		// Encapsulation
+		// Spécificités de l'OOP
+		// Héritage
+		// Abstraction
+		// Encapsulation
+		// La surchage
+		class Person {
+
+			// Attributs de la classe
+			// Ont des portés (PRIVATE/PUBLIC)
+			// La portée est ici PUBLIC
+			name;
+			age;
+
+			// La portée PRIVATE
+			#salary
+			#profession
+
+			constructor(myName, myAge) {
+				// Reférencie l'instance actuelle
+				// Initialisation
+				this.name = myName;
+				this.age = myAge;
+
+				// Manipulation des attributs privés
+				this.#salary = 199888.88
+			}
+
+			// Getters
+			get fullInfo() {
+				return `Name: ${this.name}, Age: ${this.age}`
+			}
+
+			getName() {
+				return this.name
+			}
+
+			getAge() {
+				return this.age
+			}
+
+			setName(newName) {
+				this.name = newName
+			}
+
+			setAge(newAge) {
+				this.age = newAge
+			}
+
+			displayName() {
+				console.log(this.name)
+			}
+
+			displayAge() {
+				console.log(this.age)
+			}
+		}
+
+		// Instanciation
+		// Créer une instance de la classe
+		// DATACLASSES
+		//
+		// @dataclass
+		// class Person:
+		//     name: str
+		//     age: int
+		const person = new Person("DIT", 28)
+		console.log(person)
+
+		// Manipulation
+		// Utiliser les méthodes de la classe
+		person.displayName()
+		person.displayAge()
+		console.log(person.getName())
+		console.log(person.getAge())
+		console.log(person.fullInfo)
+
+		// Uncaught SyntaxError: Private field '#salary' must be declared in an enclosing class
+		console.log(person.#salary)
+
+		// BACKEND: Logique ( BACK )
+		// BACKEND: Coté Server
+		// Ce n'est pas explicité au END USER
+		// Toutes les technologies JS
+		// FRONTEND: Angular JS, React Js, Vue Js
+		// FRONTEND: Coté Client
+		// BACKEND ( NODE JS ) + FRONTEND ( Angular Js)
+		// (NODE JS + Angular JS) <=> FULLSTACK
+		// FULLSTACK ( BACKEND + FRONTEND )
+		// RESTFULL ( JAVA/JS/PYTHON/PHP) / SOAP ( JAVA )
+		// BACKEND => REST / SOAP => FRONTEND
+		// JavaScript c'est une technologie FULLSTACK
+		// BACKEND ( API des morceaux de HTML (SERVER SIDE RENDERING (SSR) ) )
+
+		// Server
+		// Server c'est une juste une machine
+		// BAIE ( CE (Cloud) RAM/CPU )
+		// Server (OS): (LINUX/WINDOWS)
+		// OS les plus utilisés (DEBIAN/UBUNTU/CENTOS)
+		// Sur couche applicative ISO fournie des Services
+		// Services ( WEB / Mail / Ftp )
+		// Implémentation techinque:
+		//    Server ( UBUNTU JIMMY (22))
+		//    Service WEB ( Apache / Nginx / Caddy )
+		//    NB: Apache / Nginx par défaut ne chiffre pas la communication par défaut
+		//    NB: L'alternative Caddy ( lestencrypt + CerBot ) SSL
+		//    NB: Nginx / Apache ( nginx.conf SSL )
+		//    NB: Ansible qui permet d'ecrire des recettes ( CS ).
+		//    Traditionnelle:
+		//        Envoie de fichier FTP ( client / fileZilla )
+		//        En local ( PHP ) via FTP ( SSH )
+		//    Moderne:
+		//    		Outils de Versionning ( VCS )
+		//    		Automatiser le déploiement ( CI/CD )
+		//    		Installer des outils sur le server
+		//    		VCS vont se connecter en mode DEAMON
+		//    		A chaque PUSH (GIT/SVN) le deamon va ecouter HOOK
+		//    		HOOK ( PRE COMMIT ...)
+		//    Traité le CAS NODE JS:
+		//    	 Server ( DEBIAN / UBUNTU )
+		//    	 Service ( WEB / MAIL )
+		//    	   Apache / Nginx (PRODUCTION)
+		//    	 NODE JS ( Framework )
+		//
+		//    connetDb.php ( )
+		//    SQL( SELET * TABLE WHERE GROUP)
+		//    .env ( données sensibles )
+		//    configuration ()
+		//
+		//		Frameworks:
+		//    NODE JS ( Modules migrations)
+		//    npm / yarn
+		//    Pyhton ( DJANGO / FASTAPI )
+		//    Php ( Laravel )
+		//    Ruby ( Ruby on Rails )
+		//    ORM ( Python ( SQL En python ) )
+	</script>
+</body>
+
+</html>
