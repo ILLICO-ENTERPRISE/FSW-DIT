@@ -57,6 +57,15 @@ console.log('\n')
 
 // Simulation de la condition
 // Lorsque result est null
+// Récupérer le contenu des balises
+// Méthodes innerHTML et textContent
+// Django qui tourne avec BS4
+// Récupère les données de manière Journaliere ( CRON JOB )
+// Les données dans un BASE DE DONNEES ( NOSQL/SQL )
+// Exposer des APIs ( depuis le BACKEND )
+// Consommer en FRONTEND les APIs
+// Consommations avec les (REACT/ANGULAR/VUE) JS
+// FETCH / AXIOS / AJAX
 console.log(getElementInDom())
 console.log('\n')
 console.log(getElementsInDom())
