@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript</title>
+</head>
+
+<body>
+  <h1>Regular Expressions</h1>
+  <!-- JavaScript -->
+  <script type="text/javascript">
+    // LIEN: https://regex101.com/
+    // PATTERN qui permet de faire correspondre des Expressions
+    // Par exemple on peut écrire un PATTERN pour retrouver:
+    // Les EMAILS / PHONES / Expressions
+    // Le PATTERN <=> D'une règle de FILTRAGE
+    // Exemple: le number est +221771007688
+    // D'extraire le number de phone
+    // Il existe des sites en lignes pour tester les Expressions reguliere
+    // Les REGEX permettent aussi de faire de la validation
+    // Le module utilisé est Regex => new Regex(PATTERN)
+    // Les régles a connaitre:
+    // - Les numbers: 0 à 9
+    // - Les numbers, le PATTERN <=> [0-9]
+    // - Les numbers, le PATTERN <=> [0-9] <=> \d
+    // - Les chaines de caractères
+    // - Les string (MIN), le PATTERN <=> [a-z]
+    // - Les string (MAJ), le PATTERN <=> [A-Z]
+    // - Les string, le PATTERN <=> [a-zA-Z]
+    // - les string, le PATTERN <=> \w
+    // - [0-9]: Pour avoir un chiffre
+    // - [a-z]: Pour avoir une seule lettre
+    // - ^ dénote la négation
+    // - \ devant une expression speciale (*,+,.,...) permet de les considérer comme des caractères
+    // ??? Comment matcher avec plusieurs chiffres / lettres
+    // - Les symbols pour la plurialité (*,+,{n,m}) ou n: start et m: final
+    // Un mot en terme de PATTERN = \w+ ( au Moins une lettre )
+    // Un nombre en terme de PATTERN = \d+ ( au Moins un chiffre )
+    // Vous pouvez délimiter la longeur en précisant la taille en utilisant la syntaxe {n,m}
+    // Un mot de taille 8 => \w{8}
+    // Un mot d'au moins 1 taille => \w{1,}
+    // Un mot entre 1 - 8 de taille => \w{1,8}
+    // Un nombre de taille 8 => \d{8}
+    // Un nombre d'au moins 1 taille => \d{1,}
+    // Un nombre entre 1 - 8 de taille => \d{1,8}
+    // +221771007688 => REGEX = /\+221\d{9}/
+    // +221771007688 +222771007688 => /\+(221|221)\d{9}/
+    // +221771007688 +222771007688 => /\+(221|221)[0-9]{9}/
+    // +221771007688 +222761007688 => /\+(221|221)(77|76)\d{7}/
+    //
+    //
+    // 1er Exemple
+    //
+    // Retrouver tous les number commençant par +221
+    // REGEX_1 = /\+221\d+
+    // REGEX_2 = /\+221\d{9}
+    // REGEX_3 = /\+221\d{1,9}
+    //
+    // +221771007688  (1 match)
+    // +222761007688
+    // +221501007688  (1 match)
+    // +222601007688
+    // papa
+    // maman
+    //
+    //
+    // 2e Exemple
+    //
+    // Retrouver tous les number commençant par +222
+    // REGEX_1 = /\+222\d+
+    // REGEX_2 = /\+222\d{9}
+    // REGEX_3 = /\+222\d{1,9}
+    //
+    // +221771007688
+    // +222761007688  (1 match)
+    // +221501007688
+    // +222601007688  (1 match)
+    // papa
+    // maman
+    //
+    //
+    // 3e Exemple
+    //
+    // Retrouver tous les number commençant par +222 et +221
+    // REGEX_1 = /\+(221|222)\d+
+    // REGEX_2 = /\+(221|222)\d{9}
+    // REGEX_3 = /\+(221|222)\d{1,9}
+    //
+    // +221771007688  (1 match)
+    // +222761007688  (1 match)
+    // +221501007688  (1 match)
+    // +222601007688  (1 match)
+    // papa
+    // maman
+    //
+    // 4e Exemple
+    //
+    // Retrouver tous les number commençant par +222 et +221 ayant les préfixes 77 et 60
+    // REGEX_1 = /\+(221|222)(77|60)\d+
+    // REGEX_2 = /\+(221|222)(77|60)\d{7}
+    // REGEX_3 = /\+(221|222)(77|60)\d{1,7}
+    //
+    // +221771007688  (1 match)
+    // +222761007688
+    // +221501007688
+    // +222601007688  (1 match)
+    // papa
+    // maman
+    //
+    //
+    // 5e Exemple
+    //
+    // Retrouver tous les mots sauf les nombres
+    // REGEX = /^\w+
+    //
+    // +221771007688
+    // +222761007688
+    // +221501007688
+    // +222601007688
+    // papa  (1 match)
+    // maman (1 match)
+
+    // Definir le Regex
+    let pattern = /^\w+/
+
+    // Expression littérale
+    // On peut utiliser l'option i
+    // On peut utiliser l'option g
+    // On peut utiliser l'option m
+    // Ou grouper deux / plusieurs options (gm) par exemple
+    // let regex = new RegExp(pattern, 'i')
+    let regex = new RegExp(pattern, 'gm')
+
+    // Afficher le Regex
+    console.log(regex)
+
+    // data to verify
+    let data = 'papa maman 98000'
+
+    // Tester les Regex
+    // ['papa', index: 0, input: 'papa maman 98000', groups: undefined]
+    // Y acceder par l'index 0
+    console.log(regex.exec(data))
+
+    // Matcher les occurence au pattern
+    // Appliquer l'exec() puis récupération via index 0
+    // ['papa']
+    console.log(data.match(regex))
+
+    // Matcher les occurence au pattern
+    // Return true for testing pattern
+    // true
+    // Retourne un boolean quand le pattern match
+    console.log(regex.test(data))
+
+    // Faire une boucle ( ??? )
+    // Utiliser une fonction ( ??? )
+
+  </script>
+</body>
+
+</html>
