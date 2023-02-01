@@ -1,0 +1,17 @@
+https://restcountries.com/v3.1/all
+
+Utiliser le lien ci dessus
+- Afficher les données des pays
+- Faire des CARDS en css
+- Afficher trois CARD par ligne
+- Dans chaque CARD y mettre le:
+	- Nom du pays
+	- Langue du pays
+	- Country code du pays
+	- Le Flag du pays
+- Rechercher sur le Net une api pour les flags des pays en images
+- Afficher ces images en entête de chaque CARD
+- Ainsi chaqu pays aura une image qui correspond a son drapeau
+
+NB: Utiliser AXIOS
+NB: Utiliser des fonctions asynchrones

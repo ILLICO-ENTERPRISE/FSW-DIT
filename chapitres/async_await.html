@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript</title>
+</head>
+
+<body>
+  <h1>Async/Await</h1>
+  <div>
+    <p id='data'>
+      <!-- innerHTML -->
+      <!-- Resultats Ici -->
+    </p>
+  </div>
+  <script type="text/javascript">
+  //Fonction qu'on résout
+  // Elles sont traitées de manière ASYNCHRONE
+  // Elles attendent une réponse avant de terminer la suite du process
+  // Donc un ASYNC => AWAIT ( ATTENTE )
+  // Les mots clés en JS son async/await
+
+  /**
+   * [setInPElement description]
+   * @param {HTMLElement} element [description]
+   * @param {String} name    [description]
+   */
+  async function setInPElement(element, name) {
+    element.innerHTML = `${name}`
+  }
+
+  /**
+   * [displayName description]
+   * @param  {String} name [description]
+   * @return {void}      [description]
+   */
+  async function displayName(name) {
+    // Premier processus (1)
+    // On fait une récupération sur le DOM
+    // Tout le Document HTML
+    // Chargement de la page
+    // AWAIT ( ATTENDRE )
+    console.log(`First Await at: ${new Date()}`)
+    const pElement = await document.getElementById('data');
+
+    setTimeout(async function() {
+      // Deuxieme processus (2)
+      // Va s'exécuter si (1) est résolu
+      // Une opération de modification
+      // AWAIT setInPElement se resolve
+      console.log(`Second Await at: ${new Date()}`)
+      await setInPElement(pElement, name)
+    }, 2000)
+
+    setTimeout(async function() {
+      // Troisieme processus (3)
+      // Va s'exécuter si (2) est résolu
+      // Une opération de modification
+      // AWAIT setInPElement se resolve
+      console.log(`Third Await at: ${new Date()}`)
+      await setInPElement(pElement, name)
+    }, 4000)
+
+    // Continue
+  }
+
+  async function sum(x, y) {
+    // SI TOUT SE PASSE BIEN OU PAS
+    return x + y
+  }
+
+  console.log(sum(11, 12))
+
+  // Appliquer la fonction
+  // displayName('CAMARA Moussa')
+  // Promise.all([
+  //   sum(11, 12),
+  //   sum(13, 14),
+  //   sum(14, 15),
+  // ])
+
+  // THEN => QUAND TOUT SE PASSE BIEN
+  // CATCH => QUAND IL Y A UNE ERREUR
+  // ASYNC PERMET DE AWAIT POUR RESOUDRE
+  // Promise on a le RESOLVE et le REJECT
+  // Le RESOLVE pour résoudre si tout est OK
+  // Le REJET pour rejetr quand ça ne vas pas
+  // AYNC / AWAIT <=> ( new Promise() )
+  // Une Promise a un STATUT
+  // sum(12, 20)
+  sum(11, 10)
+    .then(function(result) {
+      // Si tout est OK
+      // TOUT EST BON
+      console.log(result)
+    })
+    .catch(function(err) {
+      // Verifier une exception
+      console.log(err)
+    })
+    .then(function() {
+      // Faire un FINALLY
+      console.log('Exec ASYNC/AWAIT process')
+    })
+  </script>
+</body>
+
+</html>
