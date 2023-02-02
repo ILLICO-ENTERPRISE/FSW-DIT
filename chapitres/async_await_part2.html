@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript</title>
+</head>
+
+<body>
+  <h1>Async/Await Part 2</h1>
+  <div>
+    <p id='data'>
+    </p>
+  </div>
+  <script type="text/javascript">
+  // Promises
+  // https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
+  // Une Fonction Asynchrone est resolvable
+  // A une Promise on a un resolve/reject
+  //
+  // Explication au Promise que retourne les fonctions Asynchrones
+  // Quand une fonction est déclarée Asynchrone elle retourne une Promise
+  // Ainsi: async function => Promise
+  // Promise a un état.
+  // Et les états c'est le FULFILLED (SUCCESS)
+  // On a létat en attente qui est le (PENDING)
+  // On a l'état qui traduit la non résolution (REJECTED)
+  // Introduction a une Promise
+  // Déclaration: new Promise()
+
+  // Déclarer une Promise
+  // Tout est OBJECT
+  // Donc instancier une Promise revient a new Promise()
+  // Une Promise est resolvable comme rejetable
+  // Ainsi de manière fonctionnelle:
+  // Une instance Promise(<RESOLVE>, <REJECT>)
+  // NB: L'utilisation des callbacks ( PROGRAMMATION fonctionnelle )
+  // NB: Un callbacks est une fonction de rappelle
+
+  // Ce qu'il faut garder c'est que l'appel de la promise est synchrone
+  // Et c'est ce qui est appelé apres le THEN qui est Asynchrone
+  // Ainsi le séquencement est respecté.
+  //
+  // Approche fonctionnelle (1)
+  // function displayName(name) {
+  //   return new Promise((resolve, reject) => {
+  //
+  //   });
+  // }
+
+  // Approche fonctionnelle (2)
+  // Si le nom est null on reject
+  // Si le nom est non null on resolve
+  // Analyse du retour de la fonction
+
+  /**
+   * [displayName description]
+   * @param  {String} name [description]
+   * @return {Promise<*>}      [description]
+   */
+  function displayName(name) {
+    return new Promise(function(resolve, reject) {
+      if (name === null || name === undefined)
+        reject("NULL Value");
+
+      // Resoudre en cas de réussite
+      // La réussite est définie sous condition
+      // Ainsi la condition (name !== null || name !== undefined)
+      resolve(name);
+    });
+  }
+
+  // Tester la question
+  // Prototype: Promise
+  // PromiseState: "rejected"
+  // PromiseResult: "NULL Value"
+  console.log(displayName(null))
+
+  // Prototype: Promise
+  // PromiseState: "fulfilled"
+  // PromiseResult: "CAMARA Moussa"
+  // console.log(displayName("CAMARA Moussa"))
+  displayName("CAMARA Moussa")
+
+  // CAMARA Moussa
+  displayName("CAMARA Moussa")
+    .then(function(result) {
+      console.log(result)
+    })
+
+  // Synchrone
+  // Mais une return une Promise
+  async function sum(x, y) {
+    return x + y
+  }
+
+  // Tester Promise.all()
+  // Un itérable ( OBJECT / ARRAY / LIST)
+  // condition: Toutes les promises doivent être résolues
+  // Résultat: [22, 23, 25]
+  Promise.all([
+    sum(10, 12),
+    sum(11, 12),
+    sum(10, 15)
+  ]).then(function(result) {
+    console.log(result)
+  })
+
+  // Tester Promise.all()
+  // Un itérable ( OBJECT / ARRAY / LIST)
+  // condition: Toutes les promises doivent être résolues
+  // Résultat: Uncaught (in promise) Error occurred
+  Promise.all([
+    sum(10, 12),
+    sum(11, 12),
+    new Promise(function(resolve, reject) {
+      reject('Error occurred')
+    })
+  ]).then(function(result) {
+    console.log(result)
+  })
+
+  // Tester Promise.allSettled()
+  // Un itérable ( OBJECT / ARRAY / LIST)
+  // condition: Quelque soit le rejet il retourne toujours un tableau d'obejct avec les status
+  // Résultat [
+  //   {'status': 'fulfilled', 'value': 22},
+  //   {'status': 'fulfilled', 'value': 22},
+  //   {'status': 'fulfilled', 'value': 25}
+  // ]
+  Promise.allSettled([
+    sum(10, 12),
+    sum(11, 12),
+    sum(10, 15)
+  ]).then(function(result) {
+    console.log(result)
+  })
+
+  // Tester Promise.allSettled()
+  // Un itérable ( OBJECT / ARRAY / LIST)
+  // condition: Quelque soit le rejet il retourne toujours un tableau d'obejct avec les status
+  // Résultat [
+  //   {'status': 'fulfilled', 'value': 22},
+  //   {'status': 'fulfilled', 'value': 22},
+  //   {'status': 'rejected', 'value': 'Error occurred'}
+  // ]
+  Promise.allSettled([
+    sum(10, 12),
+    sum(11, 12),
+    new Promise(function(resolve, reject) {
+      reject('Error occurred')
+    })
+  ]).then(function(result) {
+    console.log(result)
+  })
+
+  // Tester Promise.any()
+  // Un itérable ( OBJECT / ARRAY / LIST)
+  // condition: Qu'une au moins soit résolue
+  // Résultat: 22
+  Promise.any([
+    sum(10, 12),
+    sum(11, 12),
+    sum(10, 15)
+  ]).then(function(result) {
+    console.log('Any Test')
+    console.log(result)
+  })
+
+  // Tester Promise.any()
+  // Un itérable ( OBJECT / ARRAY / LIST)
+  // condition: Qu'une au moins soit résolue
+  // Résultat: 22
+  Promise.any([
+    sum(10, 12),
+    sum(11, 12),
+    new Promise(function(resolve, reject) {
+      reject('Error occurred')
+    })
+  ]).then(function(result) {
+    console.log(result)
+  })
+
+  // Tester Promise.any()
+  // Un itérable ( OBJECT / ARRAY / LIST)
+  // condition: Qu'une au moins soit résolue
+  // Résultat: 22
+  Promise.any([
+    new Promise(function(resolve, reject) {
+      reject('Error occurred')
+    }),
+    sum(10, 12),
+    sum(11, 12)
+  ]).then(function(data) {
+    console.log(data)
+  })
+  </script>
+</body>
+
+</html>

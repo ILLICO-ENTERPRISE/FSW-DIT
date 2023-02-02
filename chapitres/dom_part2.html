@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript</title>
+</head>
+
+<body>
+  <h1>Manipulation du DOM Part 2</h1>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p id="myP">Lorem ipsum dolor sit amet.</p>
+  <p class="myPClass">Lorem ipsum dolor sit amet.</p>
+  <p id="myP2">Lorem <span>ipsum</span> dolor sit amet.</p>
+  <script type="text/javascript">
+  // Récupérer un élément du DOM
+  // Par son id / class / tag
+  // <p id="myP">Lorem ipsum dolor sit amet.</p>
+  // <p class="myPClass">Lorem ipsum dolor sit amet.</p>
+  // <p>Lorem ipsum dolor sit amet.</p>
+  // Un sélecteur c'est soit l'ID / la CLASS / le TAG
+  // Sélecteur CSS pour id: #NOM_ID
+  // Sélecteur CSS pour class: .NOM_CLASS
+  // Sélecteur CSS pour le tag: NOM_DU_TAG
+  //
+  // getElementByTagName() ???
+  // getElementByClassName() ???
+
+  const pById = document.getElementById("myP")
+  const pBySId = document.querySelector("#myP")
+  const pByClass = document.querySelector(".myPClass")
+  const pByTag = document.querySelector("p")
+
+  // pById
+  // <p id="myP">Lorem ipsum dolor sit amet.</p>
+  console.log('Select by Id')
+  console.log(pById)
+  console.log('\n')
+
+  // pBySId
+  // <p id="myP">Lorem ipsum dolor sit amet.</p>
+  console.log('Select buy querySelector id')
+  console.log(pBySId)
+  console.log('\n')
+
+  // pByClass
+  // <p class="myPClass">Lorem ipsum dolor sit amet.</p>
+  console.log('Select by querySelector class')
+  console.log(pByClass)
+  console.log('\n')
+
+  // pByTag
+  // <p>Lorem ipsum dolor sit amet.</p>
+  console.log('Select by querySelector tag')
+  console.log(pByTag)
+  console.log('\n')
+
+  // Display p content
+  // Utilisation de innerHTML
+  // Résultat: Lorem ipsum dolor sit amet.
+  console.log(pByTag.innerHTML)
+
+  // Display p content
+  // Utilisation de textContent
+  // Résultat: Lorem ipsum dolor sit amet.
+  console.log(pByTag.textContent)
+  console.log('\n')
+
+  const myP2 = document.querySelector('#myP2')
+
+  // <p id="myP2">Lorem ipsum dolor sit amet.</p>
+  console.log(myP2)
+  console.log('\n')
+
+  // Différence entre innerHTML et textContent
+  // innerHTML donne exactement le contenu
+  // textContent échappe le contenu. Supprime les balises qu'il contient
+  console.log('Différence')
+  console.log(myP2.innerHTML)
+  console.log(myP2.textContent)
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style type="text/css">
+  #form {
+    padding: 30px;
+    border: 2px solid black;
+    box-sizing: content-box;
+    width: 300px;
+    height: auto;
+    margin: auto;
+    position: relative;
+  }
+
+  #form>div {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #form>div>input {
+    width: auto;
+    height: 30px;
+  }
+  </style>
+  <title>JavaScript</title>
+</head>
+
+<body>
+  <h1>Manipulation du DOM Part 2</h1>
+  <h2>Manipulation des formulaires</h2>
+  <br>
+  <!-- Les Formulaires -->
+  <form id="form" novalidate>
+    <div>
+      <label for="name">Name</label>
+      <!-- <input type="text" id="name"> -->
+      <input type="text" id="name" value="CAMARA">
+    </div>
+    <div>
+      <label for="age">Age</label>
+      <input type="number" id="age">
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email">
+    </div>
+    <div>
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone">
+    </div>
+    <div>
+      <button type="submit">
+        Valider
+      </button>
+    </div>
+  </form>
+  <script type="text/javascript">
+  const nameInput = document.querySelector('#name')
+  const ageInput = document.querySelector('#age')
+  const emailInput = document.querySelector('#email')
+  const phoneInput = document.querySelector('#phone')
+
+  // Afficher les éléments
+  // <input type="text" id="name">
+  // <input type="number" id="age">
+  // <input type="email" id="email">
+  // <input type="tel" id="phone">
+  console.log(nameInput)
+  console.log(ageInput)
+  console.log(emailInput)
+  console.log(phoneInput)
+  console.log('\n')
+
+  // Afficher la value
+  // innerHTML => RIEN (NULL)
+  // textContent => RIEN (NULL)
+  // value => CAMARA
+  // Pour les éléments input la valeur se trouve value
+  // Donc les valeurs sont dans l'ATTRIBUT value
+  // Un ATTRIBUT est une données inscrite sur la balise ouvrante
+  // Exemple: input a des attributs (id, class, value, placeholder)
+  console.log(nameInput.innerHTML)
+  console.log(nameInput.textContent)
+  console.log(nameInput.value)
+  console.log('\n')
+
+  // getAttribute vous lui passer le NOM_ATTRIBUT
+  // nameInput.setAttribute('value', 'TRAORE')
+  // Résultat: CAMARA
+  // console.log(nameInput.getAttribute('value'))
+  // nameInput.setAttribute('value', 'TRAORE')
+  // Résultat: TRAORE
+  // console.log(nameInput.getAttribute('value'))
+
+  async function checkName() {
+    if (!nameInput.value) {
+      return 'Name vide.'
+    } else {
+      return nameInput.value
+    }
+  }
+
+  async function checkAge() {
+    if (!ageInput.value) {
+      return 'Age vide.'
+    } else {
+      return ageInput.value
+    }
+  }
+
+  async function checkEmail() {
+    if (!emailInput.value) {
+      return 'Email vide.'
+    } else {
+      return emailInput.value
+    }
+  }
+
+  async function checkPhone() {
+    if (!phoneInput.value) {
+      return 'Phone vide.'
+    } else {
+      return phoneInput.value
+    }
+  }
+
+  // Fonction générique
+  async function checker(element) {
+    return (!element.value)
+      ? `${element} vide`
+      : element.value
+  }
+
+  // EventListeners
+  // On écoute un EVENT et on effectue une action
+  // Losrqu'on tape dans un input on déclenche l'évent INPUT
+  // EVENT IPUT <=> KEY UP + KEY DOWN
+  nameInput.addEventListener('input', function(event) {
+    checkName()
+      .then(function(name) {
+        console.log(name)
+      })
+      .catch(function(err) {
+        console.log(err)
+      })
+      .then(function() {
+        console.log('checkName a été invoqué')
+      })
+  })
+
+  // Faire la validation des INPUTS
+  // Mettre l'état initial du bouton submit a désactivé
+  // Vérifier si le mail renseigne est un mail
+  // Vérifier si le phone renseigne est un bon numéro
+  // Vérifier si le champ name a au moins deux lettres
+  // Vérifier si le champ de l'age est un nombre
+  // Vérifier si l'age commence par 10 comme valeur minimal
+  // Et implémenter toutes les vérifications sus décrites en Javascript
+  // Dès que tout est OK désactiver le bouton
+  // Dès que tout est OK afficher juste au dessus un message de succès
+  // Définisser la couleur du background de cet élément de succès en vert
+  // Et que cet élément ne soit visible que pendant 5 secondes
+  // Insérér aussi une icon X dans l'élément qui permet au clique de le fermer
+  // L'EVENT DU CLICK est 'click'
+  // Ainsi quand 'click est déclenché' fermer l'élément succès
+  // Ecrire des fonctions qui permettent de reset le formulaire
+  // De mettre un button de type RESET ( A NE PAS UTILISER )
+  </script>
+</body>
+
+</html>
