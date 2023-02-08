@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./public/dom3.css" />
+    <title>JavaScript</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row"></div>
+    </div>
+    <script src="./public/dom3.js"></script>
+    <script type="text/javascript">
+      // const colElements = document.querySelectorAll(".col")
+      // Array.from(colElements).forEach(function(element) {
+      //   makeCard().then(function(card) {
+          
+      //     // Add listener click
+      //     card.addEventListener("click", function(event) {
+      //       window.location.href = "https://www.google.com"
+      //     });
+
+      //     // Add card element
+      //     element.appendChild(card);
+      //   });
+      // })
+
+      const rowElement = document.querySelector(".row");
+
+      // Cast cardData into array
+      // Get the card data from forEach element
+      Array.from(cardDatas).forEach(function(data) {
+        // Build the card element
+        // Inject the card data into the card
+        // <div class="card">
+        //   <div class="card-header">
+        //     <img src="" alt="">
+        //   </div>
+        //   <div class="card-body">
+        //     <h3 class="card-title"></h3>
+        //     <p></p>
+        //   </div>
+        //   <div class="card-footer">
+        //     <p></p>
+        //   </div>
+        // </div>
+        makeCard(data).then(function(card) {
+          // If the card is built successfully
+          // Build the column
+          // Add the card into the column
+          // <div class="col">
+          //   <div class="card">
+          //     <div class="card-header">
+          //       <img src="" alt="">
+          //     </div>
+          //     <div class="card-body">
+          //       <h3 class="card-title"></h3>
+          //       <p></p>
+          //     </div>
+          //     <div class="card-footer">
+          //       <p></p>
+          //     </div>
+          //   </div>
+          // </div>
+          makeColumn(card).then(function(column) {
+            // If the column is built successfully
+            // Add the column into the row element
+            rowElement.appendChild(column);
+          });
+        })
+      })
+    </script>
+  </body>
+</html>
