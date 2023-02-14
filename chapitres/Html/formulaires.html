@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Link of BOOTSTRAP 5 -->
+    <!-- Framework CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <title>HTML5</title>
+  </head>
+
+  <body>
+    <!-- Renvoie au code BACKEND a l'URL create.php -->
+    <!-- Les methodes POST/GET/PUT/DELETE/HEAD/OPTIONS/PATCH -->
+    <!-- Les plus utilisé POST/GET/PATCH/DELETE -->
+    <!-- novalidate ( NE FAIT PAS LA VALIDATION HTML5 ) -->
+    <!-- <form action="/create.php" method="post"></form> -->
+    <!-- Attribut name utilisé par le BACKEND -->
+    <!-- <input type="text" name="salary"> -->
+    <!-- <input type="text" name="formation"> -->
+    <!-- <input type="text" name="province"> -->
+
+    <!-- BACKEND ( PHP ) -->
+    <!-- $_POST['salary'] -->
+    <!-- $_POST['formation'] -->
+    <!-- $_POST['province'] -->
+
+    <!-- BACKEND ( DJANGO/FASTAPI ) -->
+    <!-- request.POST['salary'] -->
+    <!-- request.POST['formation'] -->
+    <!-- request.POST['province'] -->
+    <form
+      method="post"
+      style="
+        border: 1px solid black;
+        display: inline-block;
+        padding: 10px;
+        margin: 10px;
+      "
+    >
+      <div>
+        <label for="id_name">Name:</label>
+        <input
+          type="text"
+          id="id_name"
+          name="name"
+          placeholder="Ex: John Doe"
+          required
+        />
+        <small>Ici mettre ton nom</small>
+      </div>
+      <div>
+        <label for="id_salary">Salary:</label>
+        <input
+          type="number"
+          id="id_salary"
+          name="salary"
+          placeholder="Ex: 20000.889"
+          pattern="/^\d{2,}$/i"
+          required
+        />
+      </div>
+      <div>
+        <label for="id_email">Email:</label>
+        <input
+          type="email"
+          id="id_email"
+          name="email"
+          placeholder="Ex: example@gmail.com"
+          pattern=""
+          required
+        />
+      </div>
+      <div>
+        <label for="id_phone">Phone Number:</label>
+        <input
+          type="tel"
+          id="id_phone"
+          name="phone"
+          placeholder="Ex: +221771880989"
+          pattern="/^\+221(7)(7|8|0)[0-9]{7}$/i"
+          required
+        />
+      </div>
+      <div>
+        <label for="id_date">Date:</label>
+        <input type="date" id="id_date" name="date" required />
+      </div>
+      <div>
+        <label for="id_datetime">Datetime:</label>
+        <input
+          type="datetime-local"
+          id="id_datetime"
+          name="datetime"
+          required
+        />
+      </div>
+      <div>
+        <label for="monNavigateur"
+          >Veuillez choisir un navigateur parmi ceux-ci :</label
+        >
+        <input
+          list="navigateurs"
+          id="monNavigateur"
+          name="monNavigateur"
+          required
+        />
+        <datalist id="navigateurs">
+          <option value="Chrome"></option>
+          <option value="Firefox"></option>
+          <option value="Internet Explorer"></option>
+          <option value="Opera"></option>
+          <option value="Safari"></option>
+          <option value="Microsoft Edge"></option>
+        </datalist>
+      </div>
+      <div>
+        <div>
+          <label for="first">Checkbox first</label>
+          <input
+            type="checkbox"
+            id="first"
+            value="first"
+            name="first"
+            required
+          />
+        </div>
+        <div>
+          <label for="second">Checkbox second</label>
+          <input
+            type="checkbox"
+            id="second"
+            value="second"
+            name="second"
+            required
+          />
+        </div>
+      </div>
+      <div>
+        <!-- Ici les RADIO ont la même valeur de l'attribut name -->
+        <fieldset>
+          <legend>Les choix du fruit</legend>
+          <input type="radio" id="Orange" value="Orange" name="fruit" checked />
+          <label for="Orange">Orange</label>
+          <input type="radio" id="Banane" value="Banane" name="fruit" />
+          <label for="Banane">Banane</label>
+          <input type="radio" id="Pomme" value="Pomme" name="fruit" />
+          <label for="Pomme">Pomme</label>
+          <input type="radio" id="Fraise" value="Fraise" name="fruit" />
+          <label for="Fraise">Fraise</label>
+        </fieldset>
+      </div>
+      <div>
+        <progress value="70" max="100"></progress>
+      </div>
+      <button type="submit">Valider</button>
+    </form>
+
+    <script>
+      // const email = document.querySelector('#id_email');
+      // const progress = document.querySelector('progress');
+
+      // email.addEventListener('onchange', (event) => {
+      //   let pattern = ""
+      //   let initValue = 0
+      //   // let interval = 100/10
+
+      //   if (pattern.match(email)) {
+      //     progress.setAttribute('value', interval)
+      //   } else {
+      //     if (progress.value >= interval) {
+      //       progress.setAttribute('value', -interval)
+      //     }
+      //   }
+      // })
+    </script>
+  </body>
+</html>

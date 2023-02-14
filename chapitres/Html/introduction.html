@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Link of BOOTSTRAP 5 -->
+  <!-- Framework CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <title>HTML5</title>
+</head>
+
+<body>
+  <!-- https://developer.mozilla.org/fr/docs/Web/HTML/Element -->
+  <h1>HTML5</h1>
+  <p>Lorem ipsum, dolor sit amet.</p>
+  <!-- Les badges -->
+  <!-- P en Bleu / SPAN en verte gras -->
+  <p>Lorem ipsum <span class="">dolor</span> sit amet.</p>
+  <!-- Créer des BADGES -->
+  <!-- Avoir des BADGES CUSTOMISES -->
+  <!-- Un élément interne a un autre élément -->
+  <!-- Vous voulez forcer le TYPE INLINE -->
+  <span>1</span>
+  <span>2</span>
+  <span>3</span>
+  <span class="badge rounded-pill text-bg-primary">Primary</span>
+  <span class="badge rounded-pill text-bg-secondary">Secondary</span>
+  <span class="badge rounded-pill text-bg-success">Success</span>
+  <span class="badge rounded-pill text-bg-danger">Danger</span>
+  <span class="badge rounded-pill text-bg-warning">Warning</span>
+  <span class="badge rounded-pill text-bg-info">Info</span>
+  <span class="badge rounded-pill text-bg-light">Light</span>
+  <span class="badge rounded-pill text-bg-dark">Dark</span>
+  <!-- Des contenuers -->
+  <!-- Contenir tous les autres éléments -->
+  <!-- Délimite les parties du DOM -->
+  <!-- Partie 1 -->
+  <hr>
+  <!-- Noeud PARENT -->
+  <div id="" class="" data-ice>
+    <!-- Redéfinir le positionnement de cette DIV -->
+    <!-- Noeud ENFANT / CSS: child -->
+    <!-- Child1 -->
+    <!-- FIRST-CHILD -->
+    <!-- Une variable n: n=1 -->
+    <div>
+      <span class="badge rounded-pill text-bg-primary">Primary</span>
+      <span class="badge rounded-pill text-bg-secondary">Secondary</span>
+      <span class="badge rounded-pill text-bg-success">Success</span>
+    </div>
+    <hr>
+    <!-- Child2 -->
+    <!-- Une variable n: n=2 -->
+    <div>
+      <span class="badge rounded-pill text-bg-primary">Primary</span>
+      <span class="badge rounded-pill text-bg-secondary">Secondary</span>
+      <span class="badge rounded-pill text-bg-success">Success</span>
+    </div>
+    <hr>
+    <!-- Child3 -->
+    <!-- Une variable n: n=3 -->
+    <div>
+      <span class="badge rounded-pill text-bg-primary">Primary</span>
+      <span class="badge rounded-pill text-bg-secondary">Secondary</span>
+      <span class="badge rounded-pill text-bg-success">Success</span>
+    </div>
+    <hr>
+    <!-- LAST CHILD -->
+    <!-- Child4 -->
+    <!-- Une variable n: n=4 -->
+    <div>
+      <span class="badge rounded-pill text-bg-primary">Primary</span>
+      <span class="badge rounded-pill text-bg-secondary">Secondary</span>
+      <span class="badge rounded-pill text-bg-success">Success</span>
+    </div>
+  </div>
+  <!-- Partie 2 -->
+  <div>
+    <!-- ALT attribut lorsque image non résolue -->
+    <!-- AIDE LES NON VOYANTS -->
+    <!-- src peut prendre un lien HTTP/PATH ABS REL -->
+    <!-- img element de type INLINE -->
+    <img src="" alt="LOGO_HOME">
+    <img src="https://via.placeholder.com/150" alt="LOGO_ANIMAL" height="400" width="">
+    <img src="https://via.placeholder.com/150" alt="LOGO_PLANT" height="" width="">
+    <img src="https://via.placeholder.com/150" alt="LOGO_HOST" height="" width="">
+    <!-- Il te permet de définir RESPONSIVE -->
+    <!-- Une image par défaut -->
+    <!-- Des image pour les écrans définis -->
+    <br><br>
+    <picture>
+      <!-- de 600 > -->
+      <source srcset="https://via.placeholder.com/150" media="(min-width: 600px)">
+      <!-- 0 <= 600 -->
+      <img src="https://via.placeholder.com/450" alt="MDN">
+    </picture>
+  </div>
+  <br>
+  <!-- Partie 3 -->
+  <div>
+    <!-- Ils peuvent prendre un lien HTTP -->
+    <!-- Eléments dee type INLINE -->
+    <a href="https://placeholder.com/">Placeholder Site Without Blank</a>
+    <br>
+    <a href="https://placeholder.com/" target='_'>Placeholder Site With Blank</a>
+    <!-- Des ANCRES -->
+    <br>
+    <!-- file:///Users/israel/DSIJavaScript/chapitres/Html/introduction.html#section1 -->
+    <a href="#section1">Aller a la section 1</a>
+    <br>
+    <!-- file:///Users/israel/DSIJavaScript/chapitres/Html/introduction.html#section2 -->
+    <a href="#section2">Aller a la section 2</a>
+    <br>
+    <!-- file:///Users/israel/DSIJavaScript/chapitres/Html/introduction.html#section3 -->
+    <a href="#section3">Aller a la section 3</a>
+    <br>
+    <!-- file:///Users/israel/DSIJavaScript/chapitres/Html/introduction.html#section4 -->
+    <a href="#section4">Aller a la section 4</a>
+    <br>
+    <!-- Mettre le lien du document -->
+    <!-- Document PDF -->
+    <a href="" download></a>
+    <!-- Mettre un mail -->
+    <a href="mailto:loesouleymane@yahoo.fr">Write mail</a>
+  </div>
+  <br>
+  <section id="section1">
+    <h1>Section 1</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita consectetur velit neque deserunt dicta consequatur magnam suscipit tempore maiores ipsam fugit quidem in, porro optio mollitia ipsa aut ullam illum.</p>
+    <img src="https://placeholder.com/400">
+  </section>
+  <section id="section2">
+    <h2>Section 2</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Reiciendis ratione ipsam blanditiis dolore. Laboriosam iste doloribus nam dolorum laborum tenetur culpa voluptates error molestiae, et? Harum, maiores. Accusamus, temporibus, atque.</p>
+    <img src="https://placeholder.com/400">
+  </section>
+  <section id="section3">
+    <h2>Section 3</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Reiciendis ratione ipsam blanditiis dolore. Laboriosam iste doloribus nam dolorum laborum tenetur culpa voluptates error molestiae, et? Harum, maiores. Accusamus, temporibus, atque.</p>
+    <img src="https://placeholder.com/400">
+  </section>
+  <section id="section4">
+    <h2>Section 4</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Reiciendis ratione ipsam blanditiis dolore. Laboriosam iste doloribus nam dolorum laborum tenetur culpa voluptates error molestiae, et? Harum, maiores. Accusamus, temporibus, atque.</p>
+    <img src="https://placeholder.com/400">
+  </section>
+  <br>
+  <!-- Les listes -->
+  <!-- Les listes NON ORDONNEES -->
+  <h1>Ma liste de fruits</h1>
+  <ul>
+    <li>Orange</li>
+    <li>Banane</li>
+    <li>Pomme</li>
+    <li>Fraise</li>
+  </ul>
+  <!-- Les listes ORDONNEES -->
+  <!-- Il y aura des numérotations -->
+  <br>
+  <h1>Ma liste de fruits</h1>
+  <ol>
+    <li>Orange</li>
+    <li>Banane</li>
+    <li>Pomme</li>
+    <li>Fraise</li>
+  </ol>
+  <!-- Les listes -->
+  <!-- Liste déroulante -->
+  <!-- Il y aura des numérotations -->
+  <br>
+  <h1>Ma liste de dino-select</h1>
+  <select id="dino-select">
+    <optgroup label="Theropods">
+      <option>Tyrannosaurus</option>
+      <option>Velociraptor</option>
+      <option>Deinonychus</option>
+    </optgroup>
+    <optgroup label="Sauropods">
+      <option>Diplodocus</option>
+      <option>Saltasaurus</option>
+      <option>Apatosaurus</option>
+    </optgroup>
+  </select>
+  <br>
+  <h1>Mes moyens de paiement</h1>
+  <select id="payment-methods">
+    <optgroup label="Senegal">
+      <option>Orange Money</option>
+      <option>Free Money</option>
+      <option>Expresso</option>
+      <option>Wave Money</option>
+      <option>Wizall</option>
+    </optgroup>
+    <optgroup label="Benin">
+      <option>Mtn Money</option>
+      <option>Moov Money</option>
+    </optgroup>
+    <optgroup label="Burkina Faso">
+      <option>Orange Money</option>
+      <option>Moov Money</option>
+      <option>Wave Money</option>
+    </optgroup>
+  </select>
+  <br><br>
+  <!-- A utiliser avec précaution -->
+  <!-- Vulnérabilité -->
+  <!-- KEYLOGGER -->
+  <iframe id="inlineFrameExample" title="Inline Frame Example" width="300" height="200" src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik">
+  </iframe>
+  <script type="text/javascript">
+  // document.addEventListener("load", function(event) {
+  // 	console.log('I m loaded')
+  //   const img = document.querySelectorAll("img")[1];
+  //   img.setAttribute('height', '400')
+  // })
+  </script>
+</body>
+
+</html>
