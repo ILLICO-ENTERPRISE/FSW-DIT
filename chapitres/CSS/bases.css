@@ -1,0 +1,162 @@
+/*Acces via TAB/SELCTEUR*/
+/*Le TAG est le nom de la balise*/
+/*Le SELECTEUR est soit ID, CLASS, NAME, ATTRS*/
+/*Le PADDIND comme étant l'espacement INTER d1 ELEM*/
+/*Le MARGIN comme étant l'espacement EXTERN d1 ELEM*/
+/*Le reset REVIENT A faire * {PADDING: 0, MARGIN: 0} */
+/*Dans :root on définit des VARIABLES GLOBALES*/
+/*Unités de mesure PX/REM/EM/VH/VW*/
+/*Définir la couleur soit le NOM DE LA COULEUR*/
+/*Définir la couleur soit la fonction RGB()*/
+/*Définir la couleur soit la fonction RGBA()*/
+/*L'opacité varie entre 0-1*/
+/* https://fonts.google.com/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@400;500;600;700&display=swap');
+
+:root {
+  --baground-color: black;
+  --border-color-primary: black;
+  --font-color-primary: blue;
+}
+
+*,
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Rokkitt', serif;
+}
+
+.container {
+  padding: 50px;
+  margin: 20px;
+  /* display: block; */
+  /* display: inline-block; */
+  /* display: flex; */
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* flex-direction: column; */
+  /* flex-direction: column-reverse; */
+  /* flex-wrap: wrap; */
+  /* flex-grow: 1; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* h1 { */
+/*  padding: 20px;*/
+/*  padding: 2em;*/
+/*  padding: 50px;*/
+/* margin: 50px; */
+/*padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;*/
+/* padding: 50px; */
+/*  border: 2px solid var(--border-color-primary);*/
+/* border-style: solid;
+  border-width: 1px;
+  border-color: var(--border-color-primary);
+  border-radius: 10px;
+  color: brown;
+  font-family: 'Edu TAS Beginner', cursive;
+  font-style: normal;
+  text-transform: uppercase;
+  text-transform: lowercase;
+  font-weight: 400; */
+/* margin-right: 10px; */
+/* margin-right: 10px;
+  display: block; */
+/* box-shadow: 1px 1px 1px 1px var(--baground-color); */
+/* } */
+
+h1 {
+  padding: 50px;
+  border: 2px solid var(--border-color-primary);
+  color: var(--font-color-primary);
+  font-family: 'Edu TAS Beginner', cursive;
+  font-style: normal;
+  text-transform: lowercase;
+  font-weight: 400;
+  /* margin-right: 10px; */
+  border-radius: 10px;
+  display: block;
+
+  background: #800080;
+  background: linear-gradient(to right, #ffc0cb, #800080);
+}
+
+.card {
+  padding: 50px;
+  border: 2px solid var(--border-color-primary);
+  color: var(--font-color-primary);
+  font-family: 'Edu TAS Beginner', cursive;
+  font-style: normal;
+  text-transform: lowercase;
+  font-weight: 400;
+  border-radius: 10px;
+  display: block;
+
+  background: #800080;
+  background: linear-gradient(to right, #ffc0cb, #800080);
+}
+
+.container>div {
+  padding: 50px;
+  border: 2px solid var(--border-color-primary);
+  color: var(--font-color-primary);
+  font-family: 'Edu TAS Beginner', cursive;
+  font-style: normal;
+  text-transform: lowercase;
+  font-weight: 400;
+  border-radius: 10px;
+  display: block;
+}
+
+/* .container>div>p {
+  animation: flipText duration infinite delay iteration-count direction fill-mode;
+} */
+
+/* @keyframes flipText {
+  0% {
+    transform: translateX(0);
+  }
+
+  10% {
+    transform: translateX(10);
+  }
+} */
+
+/* .container>div:first-child {
+  padding: 50px;
+  border: 2px solid var(--border-color-primary);
+  color: var(--font-color-primary);
+  font-family: 'Edu TAS Beginner', cursive;
+  font-style: normal;
+  text-transform: lowercase;
+  font-weight: 400;
+  /* margin-right: 10px; */
+  /* border-radius: 10px; */
+  /* display: block; */
+/* } */
+
+/* .container>div:nth-child(8) {
+  padding: 50px;
+  border: 2px solid var(--border-color-primary);
+  color: var(--font-color-primary);
+  font-family: 'Edu TAS Beginner', cursive;
+  font-style: normal;
+  text-transform: lowercase;
+  font-weight: 400;
+  border-radius: 10px;
+  display: block;
+} */
+
+.container>div>p {
+  font-family: 'Edu TAS Beginner', cursive;
+  font-size: 2em;
+}
