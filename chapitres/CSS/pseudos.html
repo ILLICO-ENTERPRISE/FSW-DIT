@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./pseudos.css">
+  <title>Pseudo Class</title>
+</head>
+
+<body>
+  <div class="container">
+    <!-- <div>
+      <p class="myText">Lorem ipsum dolor sit, amet.</p>
+    </div>
+    <div>
+      <span class="badge">Badge</span>
+    </div> -->
+    <div class="content">
+      <h2>My Form</h2>
+      <form class="form">
+        <div>
+          <label for="name">Name: </label>
+          <input type="text" id="name" required>
+        </div>
+        <div>
+          <label for="email">Email: </label>
+          <input type="email" id="email" autocomplete="on" required>
+        </div>
+        <div>
+          <label for="salary">Salary: </label>
+          <input type="number" id="salary" min="1000" required>
+        </div>
+        <button type="submit" disabled>Sauvegarder</button>
+      </form>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+  <!-- <script type="text/javascript" src="./pseudo.js"></script> -->
+  <script type="text/javascript">
+  // https://validatejs.org/
+  //
+  // Validators
+  // FIRST METHOD TO TEST VALIDATION
+  // validatejs({
+  //   name: "KUASSI",
+  //   email: "test@gmail.com",
+  //   salary: 331331
+  // })
+
+  async function DOMValue() {
+    const name = document.querySelector('[type=text]')
+    const email = document.querySelector('[type=email]')
+    const salary = document.querySelector('[type=number]')
+
+    return {
+      name: (name.value) ? name.value : '',
+      email: (email.value) ? email.value : '',
+      salary: (salary.value) ? parseInt(salary.value) : 0
+    }
+  }
+
+  async function validatejs(results = {}) {
+    const constraints = {
+      name: {
+        presence: true,
+        format: {
+          pattern: /^\w{2,}$/,
+          message: function(value, attribute, validatorOptions, attributes, globalOptions) {
+            return validate.format("^%{num} is not a valid credit card number", {
+              num: value
+            });
+          }
+        },
+      },
+      email: {
+        email: true
+      },
+      salary: {
+        presence: true,
+        numericality: {
+          strict: true,
+          noStrings: true,
+        }
+      }
+    };
+
+    let validation = validate(results, constraints)
+
+    if (validation === undefined) return true
+
+    return false
+  }
+
+  const form = document.querySelector('form')
+
+  form.addEventListener('change', async function(event) {
+    let results = await DOMValue()
+    let validation = await validatejs(results)
+    const button = document.querySelector('button')
+
+    console.log(validation)
+
+    if (validation === undefined) {
+      button.removeAttribute('disabled')
+
+      button.addEventListener('click', function(event) {
+        event.preventDefault();
+        console.log('Event Added Successfully')
+        console.log(name, email, salary)
+      })
+    } else {
+      button.removeEventListener('click', function(event) {
+        console.log('Event Removed Successfully')
+        button.addAttribute('disabled')
+      })
+    }
+  })
+  </script>
+</body>
+
+</html>

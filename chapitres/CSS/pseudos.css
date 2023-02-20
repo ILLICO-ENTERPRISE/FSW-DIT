@@ -1,0 +1,114 @@
+.container {
+  width: 80%;
+  margin: auto;
+  position: relative;
+}
+
+.content {
+  position: inherit;
+}
+
+.form {
+  border: 1px solid black;
+  height: auto;
+  width: 300px;
+  padding: 30px;
+  position: relative;
+}
+
+.form>div>label,
+.form>div>input {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form>div>label{
+  line-height: 1;
+}
+
+.form>div>input{
+  width: 100%;
+  height: 35px;
+}
+
+[type=submit] {
+  padding: 10px;
+  cursor: pointer;
+}
+/*
+[type=submit]:disabled {
+  color: purple;
+}*/
+
+/*[type=submit]:active {
+  cursor: pointer;
+}*/
+
+/* HOVER => SURVOLER */
+[type=submit]:hover {
+/*  border-color: red;*/
+/*  background-color: red;*/
+/*  cursor: progress;*/
+}
+
+.form>div>input:focus {
+  border: 10px solid black;
+}
+
+/*.form>div>input:required {
+  border: 1px solid red;
+}
+*/
+.form>div>input:invalid {
+  border: 1px solid red;
+}
+
+.form>div>input:valid {
+  border: 1px solid green;
+}
+
+.myText {
+  font-size: 1.3em;
+}
+
+/*.myText::before {
+  content: "®";
+  color: red;
+  font-size: 0.8em;
+}
+*/
+.myText::after {
+  content: "";
+  color: green;
+  font-size: 0.8em;
+}
+
+.badge {
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 0 15px;
+}
+
+.badge::after {
+  content: ""
+}
+
+/*.form>div:first-child {
+  border-top: 1px solid green;
+}*/
+
+/*.form>div:last-child {
+  border-top: 1px solid green;
+}
+
+.form>div:nth-child(2) {
+  border-top: 1px solid red;
+}
+
+.form>div:nth-child(3) {
+  border-top: 1px solid blue;
+}*/
+
+.myText:first-letter {
+  color: blue;
+}
