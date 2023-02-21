@@ -1,0 +1,23 @@
+.navbar {
+  height: auto;
+  color: white !important;
+  position: relative;
+}
+
+.logo {
+  width: 200px;
+  height: inherit;
+}
+
+.bg-light {
+  background-color: white !important;
+}
+
+.banner {
+  height: 500px;
+  background-image: url("https://dit.sn/wp-content/uploads/2022/12/Rentree-Master-IA-Nov22.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
