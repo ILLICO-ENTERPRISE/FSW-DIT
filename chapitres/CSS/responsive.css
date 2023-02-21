@@ -1,0 +1,71 @@
+:root {
+  --button-color: rgba(0,100,255,0.7);
+}
+
+/*MOBILE FIRST -> WEB*/
+.container {
+  margin: auto;
+  display: block;
+}
+
+.content {
+  display: grid;
+  gap: 20px;
+  position: relative;
+}
+
+.content>div {
+  width: 100%;
+  position: inherit;
+}
+
+.content-img {
+  width: 100%;
+  position: inherit;
+  object-fit: fill;
+}
+
+.content-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link-button {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--button-color);
+  border: 1px solid var(--button-color);
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+.link-button:hover {
+  border: none;
+  background-color: lightgray;
+}
+
+
+/*La partie Mobile*/
+@media (max-width: 568px) {
+  .container {
+    width: 90%;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    margin-bottom: 15px;
+  }
+
+}
+
+/*La partie Web*/
+@media (min-width: 569px) {
+  .container {
+    width: 80%;
+  }
+
+  .content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
